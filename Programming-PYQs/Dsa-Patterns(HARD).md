@@ -1,11 +1,7 @@
-# DSA Patterns
-
-3 Powerful Patterns that enough to crack TCS nqt
-## Pattern 1
-
 ### 1. Two Sum – Arrays
 
 Description: Find two indices such that their values sum to a target.
+
 ### Java
 
 ```java
@@ -51,6 +47,7 @@ return []
 ### 2. Kadane’s Algorithm – Max Subarray Sum
 
 Description: Find the maximum sum of a contiguous subarray.
+
 ### Java
 
 ```java
@@ -92,6 +89,7 @@ return max_sum
 ### 3. Valid Anagram – Strings
 
 Description: Check if two strings are anagrams.
+
 ### Java
 
 ```java
@@ -104,6 +102,7 @@ return true;
 ```
 
 }
+
 ### C++
 
 ```cpp
@@ -126,6 +125,7 @@ return sorted(s) == sorted(t)
 ### 4. Longest Palindromic Substring – Strings
 
 Description: Find the longest palindromic substring in a given string.
+
 ### Java
 
 ```java
@@ -168,6 +168,7 @@ int expand(string s, int l, int r) {
 while (l >= 0 && r < s.size() && s[l] == s[r]) { l--; r++; }
 return r - l - 1;
 }
+
 ### Python
 
 ```python
@@ -184,9 +185,11 @@ if r - l - 1 > max_len:
 start = l + 1
 max_len = r - l - 1
 return s[start:start + max_len]
+
 ### 5. Reverse Linked List – Linked List
 
 Description: Reverse a singly linked list.
+
 ### Java
 
 ```java
@@ -216,6 +219,7 @@ head = next;
 }
 return prev;
 }
+
 ### Python
 
 ```python
@@ -229,9 +233,11 @@ head.next = prev
 prev = head
 head = nxt
 return prev
+
 ### 6. Add Two Numbers – Linked List
 
 Description: Add two numbers represented as linked lists.
+
 ### Java
 
 ```java
@@ -254,7 +260,7 @@ return dummy.next;
 C++:
 cpp
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
-{ ListNode* dummy = new ListNode(0), *curr =
+{ ListNode* dummy = new ListNode(0), \*curr =
 dummy; int carry = 0;
 while (l1 || l2 || carry) {
 int sum = (l1 ? l1->val : 0) +
@@ -268,6 +274,7 @@ if (l2) l2 = l2->next;
 }
 return dummy->next;
 }
+
 ### Python
 
 ```python
@@ -285,9 +292,11 @@ curr = curr.next
 l1 = l1.next if l1 else None
 l2 = l2.next if l2 else None
 return dummy.next
+
 ### 7. Merge Intervals – Arrays
 
 Description: Merge overlapping intervals.
+
 ### Java
 
 ```java
@@ -307,6 +316,7 @@ Math.max(result.get(result.size() - 1)[1], interval[1]);
 }
 return result.toArray(new int[result.size()][]);
 }
+
 ### C++
 
 ```cpp
@@ -324,6 +334,7 @@ result.back()[1] = max(result.back()[1], interval[1]);
 
 return result;
 }
+
 ### Python
 
 ```python
@@ -338,9 +349,11 @@ result.append(interval)
 else:
 result[-1][1] = max(result[-1][1], interval[1])
 return result
+
 ### 8. Find Missing Number – Arrays
 
 Description: Find the missing number in an array of 1 to N.
+
 ### Java
 
 ```java
@@ -377,6 +390,7 @@ return n * (n + 1) // 2 - sum(nums)
 ### 9. Word Search – Backtracking
 
 Description: Find if a word exists in a 2D grid of characters.
+
 ### Java
 
 ```java
@@ -404,6 +418,7 @@ backtrack(board, word, i, j-1, index+1);
 board[i][j] = temp; // restore
 return found;
 }
+
 ### C++
 
 ```cpp
@@ -432,6 +447,7 @@ backtrack(board, word, i, j-1, index+1);
 board[i][j] = temp;
 return found;
 }
+
 ### Python
 
 ```python
@@ -457,9 +473,11 @@ backtrack(board, word, i, j + 1, index + 1) or
 backtrack(board, word, i, j - 1, index + 1))
 board[i][j] = temp # restore
 return found
+
 ### 10. Subsets – Backtracking
 
 Description: Generate all possible subsets of a given set of numbers.
+
 ### Java
 
 ```java
@@ -479,6 +497,7 @@ current.remove(current.size() - 1);
 
 }
 }
+
 ### C++
 
 ```cpp
@@ -513,12 +532,12 @@ for i in range(start, len(nums)):
 current.append(nums[i])
 backtrack(nums, i + 1, current, result)
 current.pop()
-## Pattern 2
 
-### 1. Easy: Find the Duplicate Number
+### 11. Easy: Find the Duplicate Number
 
 Description: Find the duplicate number in an array containing n + 1 integers where each
 integer is between 1 and n.
+
 ### Java
 
 ```java
@@ -538,6 +557,7 @@ nums[fast];
 }
 return slow;
 }
+
 ### C++
 
 ```cpp
@@ -574,9 +594,11 @@ while slow != fast:
 slow = nums[slow]
 fast = nums[fast]
 return slow
-### 2. Easy: Merge Sorted Array
+
+### 12. Easy: Merge Sorted Array
 
 Description: Merge two sorted arrays into one sorted array.
+
 ### Java
 
 ```java
@@ -596,6 +618,7 @@ while (j >= 0) {
 nums1[k--] = nums2[j--];
 }
 }
+
 ### C++
 
 ```cpp
@@ -633,9 +656,11 @@ while j >= 0:
 nums1[k] = nums2[j]
 j -= 1
 k -= 1
-### 3. Medium: Rotate Image
+
+### 13. Medium: Rotate Image
 
 Description: Rotate a given n x n 2D matrix by 90 degrees (clockwise).
+
 ### Java
 
 ```java
@@ -653,6 +678,7 @@ matrix[j][n - i - 1] = temp;
 }
 }
 }
+
 ### C++
 
 ```cpp
@@ -684,9 +710,11 @@ matrix[i][j] = matrix[n - j - 1][i]
 matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1]
 matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1]
 matrix[j][n - i - 1] = temp
-### 4. Medium: Longest Substring Without Repeating Characters
+
+### 14. Medium: Longest Substring Without Repeating Characters
 
 Description: Find the length of the longest substring without repeating characters.
+
 ### Java
 
 ```java
@@ -720,6 +748,7 @@ maxLength = max(maxLength, right - left + 1);
 }
 return maxLength;
 }
+
 ### Python
 
 ```python
@@ -735,9 +764,11 @@ left += 1
 char_set.add(s[right])
 max_len = max(max_len, right - left + 1)
 return max_len
-### 5. Hard: N-Queens
+
+### 15. Hard: N-Queens
 
 Description: Solve the N-Queens puzzle by returning all distinct solutions.
+
 ### Java
 
 ```java
@@ -775,6 +806,7 @@ if (cols[i] == col || Math.abs(cols[i] - col) == row - i)
 }
 return true;
 }
+
 ### C++
 
 ```cpp
@@ -797,7 +829,7 @@ return;
 for (int col = 0
 ```
 
-### 6. Medium: Container With Most Water
+### 16. Medium: Container With Most Water
 
 Description: Given an array of heights, find two lines that together with the x-axis form a
 container that holds the most water.
@@ -853,16 +885,17 @@ max_area = 0
 while left < right:
 width = right - left
 min_height = min(height[left], height[right])
-max_area = max(max_area, width * min_height)
+max_area = max(max_area, width \* min_height)
 if height[left] < height[right]:
 left += 1
 else:
 right -= 1
 return max_area
 
-### 7. Hard: Merge K Sorted Lists
+### 17. Hard: Merge K Sorted Lists
 
 Description: Merge k sorted linked lists into one sorted list.
+
 ### Java
 
 ```java
@@ -884,6 +917,7 @@ if (current.next != null) pq.offer(current.next);
 }
 return dummy.next;
 }
+
 ### C++
 
 ```cpp
@@ -924,9 +958,11 @@ current = current.next
 if node.next:
 heapq.heappush(heap, (node.next.val, node.next))
 return dummy.next
-### 8. Medium: Permutations
+
+### 18. Medium: Permutations
 
 Description: Generate all permutations of a given list of numbers.
+
 ### Java
 
 ```java
@@ -974,6 +1010,7 @@ backtrack(nums, current, result);
 current.pop_back();
 }
 }
+
 ### Python
 
 ```python
@@ -992,9 +1029,11 @@ if num in current: continue
 current.append(num)
 backtrack(nums, current, result)
 current.pop()
-### 9. Hard: Word Search II
+
+### 19. Hard: Word Search II
 
 Description: Find all words in a 2D board of letters using a dictionary.
+
 ### Java
 
 ```java
@@ -1041,6 +1080,7 @@ class TrieNode {
 Map<Character, TrieNode> children = new HashMap<>();
 String word;
 }
+
 ### C++
 
 ```cpp
@@ -1081,9 +1121,11 @@ word) {
 ```
 
 if (node->children
-### 10. Medium: Subsets
+
+### 20. Medium: Subsets
 
 Description: Given a set of integers, return all possible subsets (the power set).
+
 ### Java
 
 ```java
@@ -1138,10 +1180,12 @@ for i in range(start, len(nums)):
 current.append(nums[i])
 backtrack(nums, i + 1, current, result)
 current.pop()
-### 1. Rotate Image
+
+### 21. Rotate Image
 
 Description: You are given an n x n 2D matrix representing an image, rotate the image by
 90 degrees (clockwise).
+
 ### Java
 
 ```java
@@ -1190,9 +1234,11 @@ matrix[i][j] = matrix[n - j - 1][i]
 matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1]
 matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1]
 matrix[j][n - i - 1] = temp
-### 2. Set Matrix Zeroes
+
+### 22. Set Matrix Zeroes
 
 Description: Given an m x n matrix, if an element is 0, set its entire row and column to 0.
+
 ### Java
 
 ```java
@@ -1306,9 +1352,11 @@ matrix[i][0] = 0
 if col_zero:
 for j in range(len(matrix[0])):
 matrix[0][j] = 0
-### 3. Word Search II
+
+### 23. Word Search II
 
 Description: Given a 2D board and a list of words, find all words in the board.
+
 ### Java
 
 ```java
@@ -1358,6 +1406,7 @@ class TrieNode {
 TrieNode[] children = new TrieNode[26];
 String word = null;
 }
+
 ### C++
 
 ```cpp
@@ -1399,7 +1448,7 @@ visited[i][j] = false;
 TrieNode* buildTrie(vector<string>& words)
 { TrieNode* root = new TrieNode();
 for (string word : words)
-{ TrieNode* node = root;
+{ TrieNode\* node = root;
 for (char c : word) {
 if (!node->children[c - 'a']) {
 node->children[c - 'a'] = new TrieNode();
@@ -1410,6 +1459,7 @@ node->word = word;
 }
 return root;
 }
+
 ### Python
 
 ```python
@@ -1431,9 +1481,11 @@ if char not in node: return
 visited[i][j] = True
 node = node[char]
 if 'word' in node:
-### 4. Merge Intervals
+
+### 24. Merge Intervals
 
 Description: Given a collection of intervals, merge all overlapping intervals.
+
 ### Java
 
 ```java
@@ -1456,6 +1508,7 @@ merged.add(current);
 }
 return merged.toArray(new int[merged.size()][]);
 }
+
 ### C++
 
 ```cpp
@@ -1490,10 +1543,12 @@ merged[-1][1] = max(merged[-1][1], interval[1])
 else:
 merged.append(interval)
 return merged
-### 5. Unique Paths II
+
+### 25. Unique Paths II
 
 Description: A robot is located at the top-left corner of a m x n grid, it can only move down
 or right, and some cells are blocked. Find how many unique paths the robot can take.
+
 ### Java
 
 ```java
@@ -1512,6 +1567,7 @@ else if (j > 0) dp[j] += dp[j - 1];
 }
 return dp[n - 1];
 }
+
 ### C++
 
 ```cpp
@@ -1537,7 +1593,7 @@ def uniquePathsWithObstacles(grid):
 ```
 
 m, n = len(grid), len(grid[0])
-dp = [0] * n
+dp = [0] \* n
 dp[0] = 1 if grid[0][0] == 0 else 0
 for i in range(m):
 for j in range(n):
@@ -1546,11 +1602,13 @@ dp[j] = 0
 elif j > 0:
 dp[j] += dp[j - 1]
 return dp[-1]
-### 6. Best Time to Buy and Sell Stock
+
+### 26. Best Time to Buy and Sell Stock
 
 Description: You are given an array where prices[i] is the price of a given stock on day i.
 You want to maximize your profit by choosing a single day to buy one stock and choosing a
 different day in the future to sell that stock.
+
 ### Java
 
 ```java
@@ -1565,6 +1623,7 @@ maxProfit = Math.max(maxProfit, price - minPrice);
 }
 return maxProfit;
 }
+
 ### C++
 
 ```cpp
@@ -1591,9 +1650,10 @@ max_profit = max(max_profit, price - min_price)
 return max_profit
 ```
 
-### 7. Longest Palindromic Substring
+### 27. Longest Palindromic Substring
 
 Description: Given a string s, return the longest palindromic substring in s.
+
 ### Java
 
 ```java
@@ -1643,6 +1703,7 @@ right++;
 }
 return right - left - 1;
 }
+
 ### Python
 
 ```python
@@ -1663,11 +1724,13 @@ if length > maxLength:
 maxLength = length
 start = i - (maxLength - 1) // 2
 return s[start:start + maxLength]
-### 8. Jump Game II
+
+### 28. Jump Game II
 
 Description: Given an array of non-negative integers nums, where each element represents
 your maximum jump length from that position, return the minimum number of jumps to
 reach the last index.
+
 ### Java
 
 ```java
@@ -1713,13 +1776,15 @@ if i == current_end:
 jumps += 1
 current_end = farthest
 return jumps
-### 9. Decode Ways
+
+### 29. Decode Ways
 
 Description: A message containing letters from A-Z can be encoded into numbers using the
 following mapping:
 
  'A' -> "1", 'B' -> "2", ..., 'Z' -> "26".
 Given a string s consisting of digits, determine the total number of ways to decode it.
+
 ### Java
 
 ```java
@@ -1773,10 +1838,12 @@ if s[i - 1] == '1' or (s[i - 1] == '2' and s[i] <= '6'):
 curr += prev
 prev = temp
 return curr
-### 10. Word Break
+
+### 30. Word Break
 
 Description: Given a non-empty string s and a dictionary of words wordDict, determine if s
 can be segmented into a space-separated sequence of one or more dictionary words.
+
 ### Java
 
 ```java
