@@ -2,35 +2,52 @@
 
 ## 1. Check Even or Odd
 
-```java
-import java.util.*;
-class Main{
-public static void main(String[] args){
-Scanner sc = new Scanner(System.in);
-int n = sc.nextInt();
-System.out.println(n % 2 == 0 ? "Even" : "Odd");
-}
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    if (n % 2 == 0)
+        cout << "Even";
+    else
+        cout << "Odd";
+
+    return 0;
 }
 ```
 
 ## 2. Check Prime Number
 
-```java
-import java.util.*;
-class Main{
-public static void main(String[] args){
-Scanner sc = new Scanner(System.in);
-int n = sc.nextInt();
-boolean prime = true;
-if(n <= 1) prime = false;
-for(int i = 2; i <= Math.sqrt(n); i++){
-if(n % i == 0){
-prime = false;
-break;
-}
-}
-System.out.println(prime ? "Prime" : "Not Prime");
-}
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    bool prime = true;
+
+    if (n < 2) {
+        prime = false;
+    }
+
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+
+    if (prime)
+        cout << "Prime";
+    else
+        cout << "Not Prime";
+
+    return 0;
 }
 ```
 
